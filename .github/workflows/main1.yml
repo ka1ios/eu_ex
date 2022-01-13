@@ -1,0 +1,18 @@
+name: schedule-extend-euserv
+
+on:
+  push:
+  schedule:
+    - cron: '10,40 3 */9 * *'
+...
+setup, e.g. pip install -r requirements.txt or
+poetry install --no-dev
+...
+
+      - name: Testrun
+        env:
+    USERNAME: ${{ secrets.USERNAME }}
+    PASSWORD: ${{ secrets.PASSWORD }}
+    MAILPARSER_DOWNLOAD_URL_ID: ${{ secrets.MAILPARSER_DOWNLOAD_URL_ID }}
+        run: |
+          python -m extend_euserv -d -i
